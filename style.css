@@ -1,0 +1,173 @@
+/* Reset the page settings */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+/* TRACK 1: The Magic Slide Show Box */
+.background-slider {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Puts the pictures behind our text */
+    background-size: cover;
+    background-position: center;
+    /* This tells it to run the "bgChange" loop every 3 seconds endlessly */
+    animation: bgChange 3s infinite; 
+}
+
+/* TRACK 2: The Flipbook Instructions (Alternating images every 1 second) */
+@keyframes bgChange {
+    0% { background-image: url('images/Admin\ consultancy1.jpg'); }   /* Photo 1: Office Desk */
+    33% { background-image: url('images/Admin\ consultancy.jpg'); } /* Photo 2: Laptop and Coffee */
+    66% { background-image: url('images/office.jpg'); } /* Photo 3: Notepad and Pens */
+    100% { background-image: url('images/office.png'); } /* Loops back to Photo 1 */
+}
+
+/* TRACK 3: Making the text easy to read over the images */
+.content-overlay {
+    width: 100%;
+    min-height: 100%;
+    background-color: rgba(240, 248, 255, 0.85); /* Transparent Baby Blue tint over photos */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+header {
+    padding: 50px 20px;
+}
+
+h1 {
+    color: #1D3557; /* Deep professional navy for text */
+    font-size: 45px;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #4A5568;
+    font-size: 18px;
+}
+
+/* TRACK 4: Your Colors (Baby Blue and Peach) */
+.cta-button {
+    background-color: #FBC4B4; /* Pastel Peach */
+    color: #1D3557; /* Dark Navy text */
+    padding: 15px 35px;
+    font-size: 18px;
+    font-weight: bold;
+    border: 2px solid #A8DADC; /* Baby Blue Border */
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.services {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    background: white;
+    border-top: 5px solid #A8DADC; /* Baby Blue Accent Bar */
+    padding: 25px;
+    border-radius: 8px;
+    width: 250px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+}
+/* THE POP-UP WALLPAPER (Covers the whole screen) */
+.modal {
+    display: none; /* Hides the form completely when the page loads */
+    position: fixed; 
+    z-index: 999; /* Puts it on the absolute top layer above everything else */
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0, 0, 0, 0.5); /* Darkens the background slightly */
+}
+
+/* THE POP-UP BOX POSITIONING */
+.modal-content {
+    background: #ffffff;
+    border-radius: 12px;         /* Smooth, modern rounded corners */
+    padding: 40px;               /* Give elements room to breathe */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15); /* Soft, professional elevation drop-shadow */
+    max-width: 500px;
+    width: 100%;
+}
+
+/* THE CLOSE BUTTON (The X) */
+.close-btn {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    color: #1D3557;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1000; /* Makes sure the X sits on top of the form */
+}
+
+.close-btn:hover {
+    color: #ff006e; /* Turns bright pink when hovered over */
+}
+
+/* Slightly tweak your existing contact section to fit inside the pop-up */
+.contact-section h2 {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: #1a202c;              /* Deep dark slate instead of harsh pure black */
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.contact-section p {
+    color: #718096;              /* Subdued, readable grey for helper text */
+    margin-bottom: 24px;
+}
+.form-group {
+    margin-bottom: 20px;         /* Strict, even spacing between rows */
+}
+
+/* --- Input Field Clean Up --- */
+.form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;            /* Make labels bold and authoritative */
+    color: #4a5568;
+    margin-bottom: 6px;
+}
+
+.form-group input, 
+.form-group textarea {
+    width: 100%;
+    padding: 12px 16px;          /* Generous internal spacing makes it premium */
+    border: 1px solid #cbd5e0;   /* Thin, clean outline */
+    border-radius: 6px;
+    font-size: 16px;             /* Prevents iOS Safari from auto-zooming on click */
+    background-color: #f8fafc;   /* Slightly off-white canvas for inputs */
+    transition: all 0.2s ease;   /* Smooth change animations */
+    box-sizing: border-box;
+}
+
+/* --- Interactive Focus State (Crucial) --- */
+.form-group input:focus, 
+.form-group textarea:focus {
+    outline: none;
+    border-color: #3182ce;       /* Accent blue highlight on click */
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.15); /* Modern outer glow effect */
+}
+
+/* Textarea specific cleanup */
+.form-group textarea {
+    resize: vertical;            /* Restricts breaking layouts horizontally */
+    min-height: 120px;
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dubazek Concepts Admin | Consultancy for Startups</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- This invisible box holds our sliding background pictures -->
+    <div class="background-slider"></div>
+
+    <!-- This box holds our actual content so people can read it -->
+    <div class="content-overlay">
+        <header>
+            <h1>Dubazek Concepts Admin</h1>
+            <p>We handle your startup's paperwork. You handle the big ideas.</p>
+            <button class="cta-button">Get Organized Today</button>
+        </header>
+
+        <section class="services">
+            <div class="card">
+                <h3>Inbox Control</h3>
+                <p>We organize your emails and calendar daily.</p>
+            </div>
+            <div class="card">
+                <h3>Document Setup</h3>
+                <p>Professional forms and spreadsheets made for you.</p>
+            </div>
+        </section>
+    </div>
+    <!-- THE POP-UP BOX (Hidden by default) -->
+    <div id="formModal" class="modal">
+        <div class="modal-content">
+            <!-- The 'X' button to close the pop-up -->
+            <span class="close-btn" id="closeFormBtn">&times;</span>
+            
+            <section class="contact-section">
+                <h2>Let's Launch Your Startup</h2>
+                <p>Tell us your name and email. We will reach out within 24 hours.</p>
+
+               <!-- Locate this line in your HTML and update your form ID -->
+                    <form action="https://formspree.io/f/maqgbayn" method="POST">
+
+                    <div class="form-group">
+                        <label for="name">Your Name:</label>
+                        <input type="text" id="name" name="name" required placeholder="Jane Doe">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Your Email Address:</label>
+                        <input type="email" id="email" name="_replyto" required placeholder="jane@startup.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">How can we help your business?</label>
+                        <textarea id="message" name="message" required placeholder="I need help with my scheduling..."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-button">Send Message</button>
+                </form>
+            </section>
+        </div>
+    </div>
+
+<script src="script.js"></script>
+</body>
+</html>
