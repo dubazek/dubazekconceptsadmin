@@ -171,3 +171,61 @@ p {
     resize: vertical;            /* Restricts breaking layouts horizontally */
     min-height: 120px;
 }
+/* ==========================================
+   MOBILE RESPONSIVE STYLES (Screens under 768px)
+   ========================================== */
+@media screen and (max-width: 768px) {
+    
+    /* 1. Scale down large typography so it doesn't wrap awkwardly */
+    header h1 {
+        font-size: 28px !important;
+        line-height: 1.2;
+    }
+    
+    header p {
+        font-size: 16px !important;
+    }
+
+    /* 2. Stack your two services columns vertically instead of side-by-side */
+    .services {
+        display: flex;
+        flex-direction: column; /* Forces vertical stacking */
+        gap: 16px;
+        padding: 20px;
+    }
+
+    .card {
+        width: 100% !important; /* Forces cards to take full phone width */
+        box-sizing: border-box;
+    }
+
+    /* 3. Optimize the Form Pop-Up Modal for small thumbs and tight borders */
+    .modal {
+        padding: 10px; /* Prevents modal edge hitting physical phone frame */
+    }
+
+    .modal-content {
+        padding: 24px 16px !important; /* Thinner internal spacing saves room */
+        width: 100% !important;
+        max-width: 100%;
+        border-radius: 8px;
+    }
+
+    .contact-section h2 {
+        font-size: 20px !important;
+    }
+
+    /* 4. Make buttons taller and easier to click on mobile touchscreens */
+    .cta-button,
+    .submit-button {
+        width: 100%;
+        padding: 16px !important; /* Thick target for human thumbs */
+        font-size: 16px !important; /* Prevents auto-zooming input on iOS */
+    }
+    
+    .form-group input, 
+    .form-group textarea {
+        padding: 14px !important;
+        font-size: 16px !important; /* Ensures iOS Safari does not zoom text fields */
+    }
+}
